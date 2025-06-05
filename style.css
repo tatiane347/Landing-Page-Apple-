@@ -1,0 +1,440 @@
+/* --- Estilos Gerais --- */
+
+body {
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+    line-height: 1.6;
+
+    transition: background 0.5s ease, color 0.5s ease; /* Transição suave para mudança de tema */
+
+}
+
+/* --- Variáveis CSS para Cores do Tema (Padrão: Modo Claro) --- */
+
+:root {
+
+  --bg-gradient-start-light: #FFD700; /* Amarelo Ouro */
+
+  --bg-gradient-end-light: #FF69B4;   /* Rosa Choque */
+
+  --text-color-light: #1d1d1f;        /* Texto quase preto */
+
+  --header-bg-light: #fff;            /* Fundo do cabeçalho branco */
+
+  --border-color-light: #eee;         /* Borda clara */
+
+  --buy-button-color-light: #007aff;  /* Azul da Apple */
+
+  --buy-button-hover-light: #0060df;  /* Azul escuro no hover */
+
+  --description-color-light: #6e6e73; /* Cor mais suave para descrição */
+
+  --shadow-color-light: rgba(0,0,0,0.2); /* Sombra clara */
+
+  --hover-bg-button-light: rgba(0, 0, 0, 0.05); /* Hover sutil para botões secundários */
+
+}
+
+/* --- Variáveis CSS para Cores do Tema (Modo Escuro) --- */
+
+body.dark-mode {
+
+  --bg-gradient-start-dark: #2c3e50; /* Azul escuro/cinza para gradiente escuro */
+
+  --bg-gradient-end-dark: #000;      /* Preto puro para gradiente escuro */
+
+  --text-color-dark: #f5f5f7;        /* Texto branco acinzentado */
+
+  --header-bg-dark: #333;            /* Fundo do cabeçalho mais escuro */
+
+  --border-color-dark: #555;         /* Borda mais escura */
+
+  --buy-button-color-dark: #0096FF;  /* Azul mais claro para o escuro */
+
+  --buy-button-hover-dark: #0077CC;  /* Azul mais escuro no hover para o escuro */
+
+  --description-color-dark: #b0b0b0; /* Cor da descrição mais clara no escuro */
+
+  --shadow-color-dark: rgba(255,255,255,0.1); /* Sombra escura (mais sutil) */
+
+  --hover-bg-button-dark: rgba(255, 255, 255, 0.05); /* Hover sutil para botões secundários */
+
+}
+
+/* --- Aplicar Cores Baseadas no Tema --- */
+
+body {
+
+    background: linear-gradient(to right, var(--bg-gradient-start-light), var(--bg-gradient-end-light));
+
+    color: var(--text-color-light);
+
+}
+
+body.dark-mode {
+
+    background: linear-gradient(to right, var(--bg-gradient-start-dark), var(--bg-gradient-end-dark));
+
+    color: var(--text-color-dark);
+
+}
+
+.main-header {
+
+    background-color: var(--header-bg-light);
+
+    border-bottom: 1px solid var(--border-color-light);
+
+    box-shadow: 0 2px 4px var(--shadow-color-light);
+
+    padding: 10px 20px;
+
+}
+
+body.dark-mode .main-header {
+
+    background-color: var(--header-bg-dark);
+
+    border-color: var(--border-color-dark);
+
+    box-shadow: 0 2px 4px var(--shadow-color-dark);
+
+}
+
+.product-description {
+
+    color: var(--description-color-light);
+
+}
+
+body.dark-mode .product-description {
+
+    color: var(--description-color-dark);
+
+}
+
+/* --- Header e Navegação --- */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between; /* Afasta logo e botão */
+
+    align-items: center;
+
+    max-width: 980px;
+
+    margin: 0 auto;
+
+}
+
+.apple-logo {
+
+    height: 24px;
+
+    width: auto;
+
+}
+
+/* --- Botão "Comprar agora" (.buy-button) --- */
+
+.buy-button {
+
+    background-color: var(--buy-button-color-light);
+
+    color: #fff; /* O texto do botão pode ser sempre branco ou preto para contraste */
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    font-size: 1.2em;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    box-shadow: 0 2px 4px var(--shadow-color-light);
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    outline: none; /* Remove a borda de foco padrão do navegador */
+
+}
+
+.buy-button:hover {
+
+    background-color: var(--buy-button-hover-light);
+
+    box-shadow: 0 4px 8px var(--shadow-color-light);
+
+}
+
+body.dark-mode .buy-button {
+
+    background-color: var(--buy-button-color-dark);
+
+    box-shadow: 0 2px 4px var(--shadow-color-dark);
+
+}
+
+body.dark-mode .buy-button:hover {
+
+    background-color: var(--buy-button-hover-dark);
+
+    box-shadow: 0 4px 8px var(--shadow-color-dark);
+
+}
+
+/* --- Botão "Modo Escuro/Claro" (.dark-mode-button) --- */
+
+.dark-mode-button {
+
+    background: none; /* Fundo transparente por padrão */
+
+    color: var(--text-color-light); /* Cor do texto, adapta ao tema */
+
+    border: 1px solid var(--border-color-light); /* Borda sutil, adapta ao tema */
+
+    padding: 8px 15px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-size: 0.9em;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+    outline: none;
+
+}
+
+.dark-mode-button:hover {
+
+    background-color: var(--hover-bg-button-light); /* Leve destaque no hover */
+
+}
+
+body.dark-mode .dark-mode-button {
+
+    color: var(--text-color-dark);
+
+    border-color: var(--border-color-dark);
+
+}
+
+body.dark-mode .dark-mode-button:hover {
+
+    background-color: var(--hover-bg-button-dark);
+
+}
+
+/* --- Seção do Produto --- */
+
+.product-page {
+
+    max-width: 980px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+
+}
+
+.product-display {
+
+    display: flex;
+
+    flex-direction: column; /* Mobile first: coluna */
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+.product-image-container {
+
+    width: 100%;
+
+    max-width: 600px;
+
+}
+
+.iphone-image {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+}
+
+.product-info {
+
+    text-align: center;
+
+    width: 100%;
+
+    max-width: 400px;
+
+}
+
+.product-title {
+
+    font-size: 3.5em;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+.product-tagline {
+
+    font-size: 2.2em;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+}
+
+.product-price {
+
+    font-size: 1.5em;
+
+    font-weight: 500;
+
+    margin-bottom: 30px;
+
+}
+
+/* --- Opções de Cor --- */
+
+.color-options {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+}
+
+.color-options p {
+
+    font-size: 1em;
+
+    margin-bottom: 15px;
+
+    color: var(--description-color-light); /* Adapta ao tema */
+
+}
+
+body.dark-mode .color-options p {
+
+    color: var(--description-color-dark); /* Adapta ao tema */
+
+}
+
+.color-swatches {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+}
+
+.color-swatch {
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    border: 2px solid transparent;
+
+    transition: border-color 0.3s ease;
+
+}
+
+.color-swatch.selected {
+
+    border-color: var(--buy-button-color-light); /* Borda da cor selecionada no modo claro */
+
+}
+
+body.dark-mode .color-swatch.selected {
+
+    border-color: var(--buy-button-color-dark); /* Borda da cor selecionada no modo escuro */
+
+}
+
+/* --- Responsividade para telas maiores (Desktop/Tablet) --- */
+
+@media (min-width: 768px) {
+
+    .product-display {
+
+        flex-direction: row;
+
+        text-align: left;
+
+        justify-content: center;
+
+    }
+
+    .product-image-container {
+
+        width: 50%;
+
+    }
+
+    .product-info {
+
+        width: 40%;
+
+        text-align: left;
+
+    }
+
+    .product-title {
+
+        font-size: 4em;
+
+    }
+
+    .product-tagline {
+
+        font-size: 2.5em;
+
+    }
+
+    .color-swatches {
+
+        justify-content: flex-start;
+
+    }
+
+}
+
